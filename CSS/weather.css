@@ -1,0 +1,157 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Search Bar */
+.search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.search input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search button {
+    background-color: #007bff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.search button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Error Message */
+.not {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Current Day Weather Styling */
+.current-day {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.current-day .weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.current-day h1.temp {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.current-day h2.city {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details .col {
+    display: flex;
+    align-items: center;
+}
+
+.details .col img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.details .col p {
+    margin: 0;
+}
+
+/* 3 Days Before & After Section */
+.forecast-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.forecast-grid .day {
+    width: 30%;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-grid .day .weather-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast-grid .day h1.temp {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.forecast-grid .day h2.city {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Horizontal Lines (Separators) */
+.before-line,
+.after-line {
+    margin: 20px 0;
+    border: none;
+    border-top: 2px solid #ddd;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .forecast-grid {
+        flex-direction: column;
+    }
+
+    .forecast-grid .day {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .search input {
+        width: 80%;
+    }
+}
