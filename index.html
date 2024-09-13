@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather App with Live Map</title>
     <link rel="stylesheet" href="CSS/weather.css">
+    <!-- Leaflet.js for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
     <div class="container">
+        <h1 class="centered"><b>SkySense</b></h1>
         <!-- Search Bar -->
         <div class="search">
             <input type="text" placeholder="Enter city name" spellcheck="false">
@@ -111,6 +115,11 @@
                 </div>
             </div>
         </div>
+                <!-- Live Map Section (Added Below Forecast) -->
+                <h2>Live Map</h2>
+                <div id="map" style="height: 400px;"></div> <!-- Leaflet Map -->
+        
+        
     </div>
 
     <script src="JavaScript/weather.js"></script>

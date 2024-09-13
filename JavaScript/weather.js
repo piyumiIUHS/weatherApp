@@ -115,4 +115,42 @@ searchBox.addEventListener("keyup", function (event) {
         event.preventDefault();
         searchBtn.click();
     }
+    // Initialize the Leaflet map
+    var map = L.map('map').setView([51.505, -0.09], 5); // Initial view (centered on Europe)
+
+    // Load map tiles from OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Function to update the map based on the city's coordinates
+    function updateMap(lat, lon) {
+        map.setView([lat, lon], 10); // Set map center to the city's coordinates
+        L.marker([lat, lon]).addTo(map) // Add marker at the city's location
+            .bindPopup("City's Weather Location")
+            .openPopup();
+    }
+
+    // Call the updateMap function after fetching weather data
+    async function checkWeather(city) {
+        try {
+            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+            if (response.status === 404) {
+                throw new Error("City not found");
+            }
+            const data = await response.json();
+            const lat = data.coord.lat;
+            const lon = data.coord.lon;
+
+            // Update the map with the city's coordinates
+            updateMap(lat, lon);
+
+            // Other weather-related updates...
+        } catch (error) {
+            console.error("Error fetching weather data:", error.message);
+            document.querySelector(".error").innerHTML = error.message;
+            document.querySelector(".error").style.display = "block";
+            document.querySelector(".weather").style.display = "none";
+        }
+    }
 });

@@ -6,6 +6,16 @@ body {
     color: #333;
 }
 
+.centered {
+    text-align: center;
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    font-weight: 700;
+}
+
+
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -153,4 +163,5 @@ body {
     .search input {
         width: 250px;
     }
+    
 }
