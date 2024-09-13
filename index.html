@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7-Day Weather App</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="CSS/weather.css">
 </head>
 <body>
@@ -11,184 +11,101 @@
         <!-- Search Bar -->
         <div class="search">
             <input type="text" placeholder="Enter city name" spellcheck="false">
-            <button type="button"><img src="Image/search.png" alt="Search"></button>
+            <button type="button">Search</button>
         </div>
 
-        <!-- Error Message -->
-        <div class="not" style="color: red;"></div>
-        <!-- Weather Info -->
-        <div class="weather">
-            <!-- Current Day Weather -->
+        <!-- Main Weather Card (Today) -->
+        <div class="card">
             <div class="current-day">
                 <h2 class="title">Today</h2>
                 <img class="weather-icon" src="" alt="Weather Icon">
-                <h1 class="temp"></h1> 
-                <h2 class="city"></h2>
+                <h1 class="temp">25°C</h1>
+                <h2 class="city">City, Country</h2>
+              
+                
+                <!-- Date Display -->
+                <p class="date-today"></p> <!-- The formatted date will be inserted here -->
+
                 <div class="details">
                     <div class="col">
                         <img src="Image/humidity.png" alt="Humidity Icon">
-                        <div>
-                            <p class="humidity"></p>
-                            <p>Humidity</p>
-                        </div>
+                        <p class="humidity">60%</p> <!-- Humidity percentage will be displayed here -->
+                        <p>Humidity</p>
                     </div>
                     <div class="col">
                         <img src="Image/wind.png" alt="Wind Icon">
-                        <div>
-                            <p class="wind">km/h</p>
-                            <p>Wind Speed</p>
-                        </div>
+                        <p class="wind">12 Km/h</p> <!-- Wind speed will be displayed here -->
+                        <p>
+                            Wind Speed</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Horizontal Line -->
-            <hr class="before-line">
+        <!-- Horizontal Line (Before Days) -->
+        <hr class="before-line">
 
-            <!-- 3 Days Before Section -->
-            <div class="forecast-grid">
-                <div class="day">
-                    <h2 class="title">Day -3</h2>
-                    <img class="weather-icon" src="" alt="Weather Icon">
-                    <h1 class="temp"></h1> 
-                    <h2 class="city"></h2>
-                    <div class="details">
-                        <div class="col">
-                            <img src="Image/humidity.png" alt="Humidity Icon">
-                            <div>
-                                <p class="humidity"></p>
-                                <p>Humidity</p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <img src="Image/wind.png" alt="Wind Icon">
-                            <div>
-                                <p class="wind">km/h</p>
-                                <p>Wind Speed</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="day">
-                    <h2 class="title">Day -2</h2>
-                    <img class="weather-icon" src="" alt="Weather Icon">
-                    <h1 class="temp"></h1> 
-                    <h2 class="city"></h2>
-                    <div class="details">
-                        <div class="col">
-                            <img src="Image/humidity.png" alt="Humidity Icon">
-                            <div>
-                                <p class="humidity"></p>
-                                <p>Humidity</p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <img src="Image/wind.png" alt="Wind Icon">
-                            <div>
-                                <p class="wind">km/h</p>
-                                <p>Wind Speed</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="day">
-                    <h2 class="title">Day -1</h2>
-                    <img class="weather-icon" src="" alt="Weather Icon">
-                    <h1 class="temp"></h1> 
-                    <h2 class="city"></h2>
-                    <div class="details">
-                        <div class="col">
-                            <img src="Image/humidity.png" alt="Humidity Icon">
-                            <div>
-                                <p class="humidity"></p>
-                                <p>Humidity</p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <img src="Image/wind.png" alt="Wind Icon">
-                            <div>
-                                <p class="wind">km/h</p>
-                                <p>Wind Speed</p>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Forecast for 3 Days Before -->
+        <div class="forecast-grid">
+            <div class="day day-minus-3">
+                <h3 class="date-minus-3"></h3> <!-- Date for Day -3 -->
+                <img class="weather-icon" src="" alt="Weather Icon">
+                <h1 class="temp">23°C</h1>
+                <div class="details">
+                    <p class="humidity">65%</p>
+                    <p class="wind">14 Km/h</p>
                 </div>
             </div>
-
-            <!-- Horizontal Line -->
-            <hr class="after-line">
-
-            <!-- 3 Days After Section -->
-            <div class="forecast-grid">
-                <div class="day">
-                    <h2 class="title">Day +1</h2>
-                    <img class="weather-icon" src="" alt="Weather Icon">
-                    <h1 class="temp"></h1> 
-                    <h2 class="city"></h2>
-                    <div class="details">
-                        <div class="col">
-                            <img src="Image/humidity.png" alt="Humidity Icon">
-                            <div>
-                                <p class="humidity"></p>
-                                <p>Humidity</p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <img src="Image/wind.png" alt="Wind Icon">
-                            <div>
-                                <p class="wind">km/h</p>
-                                <p>Wind Speed</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="day day-minus-2">
+                <h3 class="date-minus-2"></h3> <!-- Date for Day -2 -->
+                <img class="weather-icon" src="" alt="Weather Icon">
+                <h1 class="temp">24°C</h1>
+                <div class="details">
+                    <p class="humidity">62%</p>
+                    <p class="wind">13 Km/h</p>
                 </div>
-
-                <div class="day">
-                    <h2 class="title">Day +2</h2>
-                    <img class="weather-icon" src="" alt="Weather Icon">
-                    <h1 class="temp"></h1> 
-                    <h2 class="city"></h2>
-                    <div class="details">
-                        <div class="col">
-                            <img src="Image/humidity.png" alt="Humidity Icon">
-                            <div>
-                                <p class="humidity"></p>
-                                <p>Humidity</p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <img src="Image/wind.png" alt="Wind Icon">
-                            <div>
-                                <p class="wind">km/h</p>
-                                <p>Wind Speed</p>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="day day-minus-1">
+                <h3 class="date-minus-1"></h3> <!-- Date for Day -1 -->
+                <img class="weather-icon" src="" alt="Weather Icon">
+                <h1 class="temp">25°C</h1>
+                <div class="details">
+                    <p class="humidity">60%</p>
+                    <p class="wind">12 Km/h</p>
                 </div>
+            </div>
+        </div>
 
-                <div class="day">
-                    <h2 class="title">Day +3</h2>
-                    <img class="weather-icon" src="" alt="Weather Icon">
-                    <h1 class="temp"></h1> 
-                    <h2 class="city"></h2>
-                    <div class="details">
-                        <div class="col">
-                            <img src="Image/humidity.png" alt="Humidity Icon">
-                            <div>
-                                <p class="humidity"></p>
-                                <p>Humidity</p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <img src="Image/wind.png" alt="Wind Icon">
-                            <div>
-                                <p class="wind">km/h</p>
-                                <p>Wind Speed</p>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Horizontal Line (After Days) -->
+        <hr class="after-line">
+
+        <!-- Forecast for 3 Days After -->
+        <div class="forecast-grid">
+            <div class="day day-plus-1">
+                <h3 class="date-plus-1"></h3> <!-- Date for Day +1 -->
+                <img class="weather-icon" src="" alt="Weather Icon">
+                <h1 class="temp">28°C</h1>
+                <div class="details">
+                    <p class="humidity">50%</p>
+                    <p class="wind">10 Km/h</p>
+                </div>
+            </div>
+            <div class="day day-plus-2">
+                <h3 class="date-plus-2"></h3> <!-- Date for Day +2 -->
+                <img class="weather-icon" src="" alt="Weather Icon">
+                <h1 class="temp">29°C</h1>
+                <div class="details">
+                    <p class="humidity">48%</p>
+                    <p class="wind">9 Km/h</p>
+                </div>
+            </div>
+            <div class="day day-plus-3">
+                <h3 class="date-plus-3"></h3> <!-- Date for Day +3 -->
+                <img class="weather-icon" src="" alt="Weather Icon">
+                <h1 class="temp">30°C</h1>
+                <div class="details">
+                    <p class="humidity">45%</p>
+                    <p class="wind">8 Km/h</p>
                 </div>
             </div>
         </div>

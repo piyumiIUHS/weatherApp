@@ -1,157 +1,156 @@
-/* General Body Styling */
+/* General Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
 }
 
 .container {
-    width: 100%;
     max-width: 1200px;
-    height: 100vh;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
     padding: 20px;
-    overflow-y: auto;
 }
 
-/* Search Bar */
+/* Search Box Styling */
 .search {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin: 30px 0;
 }
 
 .search input {
-    width: 60%;
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
+    font-size: 18px;
+    width: 400px;
     border-radius: 5px;
-    outline: none;
+    border: 1px solid #ccc;
 }
 
 .search button {
-    background-color: #007bff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
+    padding: 10px 20px;
     margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.search button img {
-    width: 20px;
-    height: 20px;
+.search button:hover {
+    background-color: #0056b3;
 }
 
-/* Error Message */
-.not {
-    font-size: 16px;
-    margin-bottom: 10px;
+/* Main Weather Card */
+.card {
+    background-color: #74EBD5;
+    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+    ;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
 }
 
-/* Current Day Weather Styling */
-.current-day {
-    background-color: #007bff;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.current-day .weather-icon {
+.weather-icon {
     width: 100px;
     height: 100px;
+    margin-bottom: 10px;
 }
 
-.current-day h1.temp {
+.temp {
     font-size: 48px;
+    font-weight: bold;
     margin: 10px 0;
 }
 
-.current-day h2.city {
+.city {
     font-size: 24px;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .details {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 .details .col {
-    display: flex;
-    align-items: center;
+    margin: 0 15px;
 }
 
-.details .col img {
+.details img {
     width: 24px;
     height: 24px;
-    margin-right: 10px;
+    vertical-align: middle;
 }
 
-.details .col p {
-    margin: 0;
+.details p {
+    font-size: 16px;
+    margin-top: 5px;
 }
 
-/* 3 Days Before & After Section */
+/* Forecast Section */
 .forecast-grid {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
 }
 
 .forecast-grid .day {
-    width: 30%;
-    background-color: #f8f9fa;
+    background-color: #74EBD5;
+    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+    padding: 20px;
     border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.forecast-grid .day h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .forecast-grid .day .weather-icon {
     width: 50px;
     height: 50px;
+    margin-bottom: 10px;
 }
 
-.forecast-grid .day h1.temp {
-    font-size: 36px;
+.forecast-grid .day .temp {
+    font-size: 28px;
     margin: 10px 0;
+    color: #333;
 }
 
-.forecast-grid .day h2.city {
-    font-size: 18px;
-    margin: 10px 0;
+.forecast-grid .day .details {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
 }
 
-/* Horizontal Lines (Separators) */
-.before-line,
-.after-line {
+.forecast-grid .day .details img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+/* Horizontal Lines */
+.before-line, .after-line {
+    border: 0;
+    height: 2px;
+    background-color: #ddd;
     margin: 20px 0;
-    border: none;
-    border-top: 2px solid #ddd;
 }
 
-/* Media Queries for Responsiveness */
+/* Responsive Design */
 @media (max-width: 768px) {
     .forecast-grid {
-        flex-direction: column;
-    }
-
-    .forecast-grid .day {
-        width: 100%;
-        margin-bottom: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
 
     .search input {
-        width: 80%;
+        width: 250px;
     }
 }
